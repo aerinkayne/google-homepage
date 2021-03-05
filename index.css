@@ -6,12 +6,18 @@
     letter-spacing: 0.5px;
 }
 
+body {
+    position: relative;
+    --footerH: 75px;
+    font-size: 14px;
+}
+
 nav {
+    padding: 0 1em;
     display: flex;
     justify-content: space-between;
     height: 60px;
     width: 100%;
-    border: 1px solid red;
 }
 nav ul {
     display: flex;
@@ -19,23 +25,64 @@ nav ul {
     list-style-type: none;
 }
 nav li {
-    margin: 0 0.5em;
-    padding: 0.5em 1em;
-    border: 1px solid green;
+    padding: 0.5em;
+    cursor: pointer;
 }
+
+main {
+    position: relative;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+}
+
+
+footer {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: #eee;
+    display: flex;
+    flex-wrap: wrap;
+    color: #222;
+    justify-content: space-between;
+}
+
 
 .flex-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid blue;
 }
 
 .sm-circle {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .sm-circle:hover {
     background-color: #eee;
+}
+
+#google-jumb {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 25vh;
+    max-height: 290px;
+}
+#google-menu {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+#user {
+    width: 32px;
+    height: 32px;
+    background-color: #d55;
+    border-radius: 50%;
 }
