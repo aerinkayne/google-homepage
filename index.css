@@ -9,7 +9,8 @@
 body {
     position: relative;
     --navH: 60px;
-    --navH-media: 100px;
+    --footH: 47px; 
+    --footH-media: 100px;
     font-size: 14px;
     color: #222;
 }
@@ -52,15 +53,14 @@ footer a:active {
 main {
     position: relative;
     margin: 0 auto;
-    height: calc(100vh - 2* var(--navH));
+    height: calc(100vh - var(--navH) - var(--footH));
+    min-height: 312px;
     width: 100%;
 }
 
 footer {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    height: var(--navH);
+
+    height: var(--footH);
     background-color: #eee;
     display: flex;
     justify-content: space-around;
@@ -96,7 +96,7 @@ footer li {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    height: 25vh;
+    height: 28vh;
     min-height: 92px;
     max-height: 290px;
 }
@@ -105,11 +105,7 @@ footer li {
     width: 24px;
     height: 24px;
 }
-#google-search{
-    display: block;
-    width: 24px;
-    height: 24px;
-}
+
 #user {
     width: 96px;
     height: 36px;
@@ -120,9 +116,10 @@ footer li {
 }
 form {
     margin: 2em auto;
-    width: 80%;
+    width: 90%;
     min-width: 395px;
     max-width: 582px;
+    height: 160px;
 }
 #search-div {
     margin-bottom: 2em;
@@ -135,6 +132,12 @@ form {
 }
 #search-div:hover {
     box-shadow: 0 1px 3px 1px #ddd;
+}
+#google-search{
+    display: block;
+    width: 24px;
+    height: 24px;
+    transform: scale(0.8);
 }
 input {
     margin: auto 1em;
@@ -184,6 +187,6 @@ button:hover {
         height: 100px;
     }
     main {
-        height: calc(100vh - var(--navH) - var(--navH-media));
+        height: calc(100vh - var(--navH) - var(--footH-media));
     }
 }
