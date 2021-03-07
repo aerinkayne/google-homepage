@@ -8,16 +8,18 @@
 
 body {
     position: relative;
-    --footerH: 75px;
+    --navH: 60px;
+    --navH-media: 100px;
     font-size: 14px;
     color: #222;
 }
 
 nav {
+    position: relative;
     padding: 0 1em;
     display: flex;
     justify-content: space-between;
-    height: 60px;
+    height: var(--navH);
     width: 100%;
 }
 
@@ -50,22 +52,23 @@ footer a:active {
 main {
     position: relative;
     margin: 0 auto;
-    height: 100vh;
+    height: calc(100vh - 2* var(--navH));
     width: 100%;
 }
-
 
 footer {
     position: absolute;
     top: 100%;
     width: 100%;
+    height: var(--navH);
     background-color: #eee;
     display: flex;
     justify-content: space-around;
+    color: #686b70;
 }
 footer li {
     margin: 0.5em;
-    color: #70757a
+    
 }
 
 
@@ -87,15 +90,23 @@ footer li {
     background-color: #eee;
 }
 
-#google-jumb {
+#google-image-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    width: 100%;
     height: 25vh;
+    min-height: 92px;
     max-height: 290px;
 }
+
 #google-menu {
+    width: 24px;
+    height: 24px;
+}
+#google-search{
+    display: block;
     width: 24px;
     height: 24px;
 }
@@ -107,7 +118,60 @@ footer li {
     font-weight: bolder;
     border-radius: 4px;
 }
+form {
+    margin: 2em auto;
+    width: 80%;
+    min-width: 395px;
+    max-width: 582px;
+}
+#search-div {
+    margin-bottom: 2em;
+    padding: 0.5em 1em;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    border-radius: 22px;
+    border: 1px solid #ddd;
+}
+#search-div:hover {
+    box-shadow: 0 1px 3px 1px #ddd;
+}
+input {
+    margin: auto 1em;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+input:active, input:focus {
+    border: none;
+}
 
+#search-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bolder;
+    border: 1px solid transparent;
+    margin: 0 0.5em;
+    padding: 1em;
+    height: 36px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
 
 @media screen and (max-width: 731px) {
     #user {
@@ -117,5 +181,9 @@ footer li {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100px;
+    }
+    main {
+        height: calc(100vh - var(--navH) - var(--navH-media));
     }
 }
